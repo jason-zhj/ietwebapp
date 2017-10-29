@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load staticfiles%}
+{%  block header %}
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="intro-text">
+                        <img class="img-responsive" src="{% static 'img/browse_events.gif' %}" alt="">
+                        <span class="name">Browse our events</span>
+                        <hr class="star-light">
+
+                    </div>
+
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <a href="#upcomingEvents" class="btn btn-lg btn-default">
+                            Upcoming
+                        </a>
+                        <a href="#ongoingEvents" class="btn btn-lg btn-default">
+                            Ongoing
+                        </a>
+                        <a href="#pastEvents" class="btn btn-lg btn-default">
+                            Past
+                        </a>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main_content %}
+
+    <section id="upcomingEvents" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Upcoming Events</h2>
+                    <p class="placeholder-md"></p>
+                </div>
+            </div>
+            <div class="row">
+                {% if upcomingEvents %}
+                {% for item in upcomingEvents %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <img src="{{ item.mainPoster.url }}" max-width="250" alt="...">
+                      <div class="caption">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{item.description|truncatewords:15 }}</p>
+                        <p><a href="/event/{{ item.id }}" class="btn btn-primary" role="button">Detail</a>
+                            {% ifequal item.enableRegistration True %}
+                            <a href="/event/{{ item.id }}#participate" class="btn btn-default" role="button">Participate</a>
+                            {% endifequal %}
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif  %}
+
+            </div>
+        </div>
+    </section>
+
+    <section id="ongoingEvents" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Ongoing Events</h2>
+                    <p class="placeholder-md"></p>
+                </div>
+            </div>
+            <div class="row">
+                {% if upcomingEvents %}
+                {% for item in ongoingEvents %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <img src="{{ item.mainPoster.url }}" max-width="250" alt="...">
+                      <div class="caption">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{item.description|truncatewords:15 }}</p>
+                        <p><a href="/event/{{ item.id }}" class="btn btn-primary" role="button">Detail</a>
+                            {% ifequal item.enableRegistration True %}
+                            <a href="/event/{{ item.id }}#participate" class="btn btn-default" role="button">Participate</a>
+                            {% endifequal %}
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif  %}
+
+            </div>
+        </div>
+    </section>
+
+
+        <section id="pastEvents" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Past Events</h2>
+                    <p class="placeholder-md"></p>
+                </div>
+            </div>
+            <div class="row">
+                {% if upcomingEvents %}
+                {% for item in pastEvents %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                      <img src="{{ item.mainPoster.url }}" max-width="250" alt="...">
+                      <div class="caption">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{item.description|truncatewords:15 }}</p>
+                        <p><a href="/event/{{ item.id }}" class="btn btn-primary" role="button">Detail</a>
+                            {% ifequal item.enableRegistration True %}
+                            <a href="/event/{{ item.id }}#participate" class="btn btn-default" role="button">Participate</a>
+                            {% endifequal %}
+                        </p>
+                      </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif  %}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,143 @@
+#logo_img{
+    height: 20px;
+    width: 30px;
+}
+
+#topnavbar_nav {
+    margin-bottom: 0;
+}
+
+#headermessage_div{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+#home_medias_section .media{
+    margin-top:30px;
+}
+
+#home_medias_section .media p{
+    margin-top: 10px;
+    line-height: 2em;
+    font-size: 15px;
+}
+
+#home_medias_section .media img{
+    margin-right:20px;
+    margin-left:20px;
+}
+
+/*legacy code, to be removed*/
+.home_heading_span{
+    margin-left: 20px;
+    color: white;
+    display: block;
+    margin-top: 20px;
+    font-size: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 11px;
+    background-color: slategrey;
+}
+
+.heading_span{
+    margin-left: 20px;
+    color: white;
+    display: block;
+    margin-top: 20px;
+    font-size: 30px;
+    padding-left: 30px;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 11px;
+    background-color: slategrey;
+}
+
+#footer{
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    text-align: center;
+}
+
+#upcoming_events_heading_span
+{
+    font-size:30px;
+    margin-top: 20px;
+    display: block;
+    background-color: slategrey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    color: white;
+    margin-right: 15px;
+}
+
+#event_tn_div{
+    margin-right: 15px;
+    margin-top:15px;
+}
+
+#event_tn_div .thumbnail{
+    border:none;
+}
+
+
+#about_medias_section .media{
+    margin-top:30px;
+}
+
+#about_medias_section .media p{
+    margin-top: 10px;
+    line-height: 2em;
+    font-size: 15px;
+}
+
+#about_medias_section .media img{
+    margin-right:20px;
+    margin-left:20px;
+
+}
+
+#event_panel_div{
+    margin-left: 20px;
+    margin-top: 20px
+}
+
+#eventSuggestionSubmitted_section{
+    text-align: center;
+}
+
+#error_section{
+    text-align: center;
+}
+
+#join_section p{
+    line-height:3em;
+}
+
+
+#join_section>div{
+    margin-left:30px;
+}
+
+#membershipBenefit_section>div{
+    margin-left:50px;
+    margin-right: 20px;
+}
+
+#eventDetail_poster_div{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.eventDetail p{
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.errorlist li{
+    list-style-type: None;
+    color: red;
+}

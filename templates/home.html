@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load staticfiles%}
+{%  block header %}
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="{% static 'img/iet-logo.gif' %}" alt="">
+                    <div class="intro-text">
+                        <span class="name">Welcome to IET-NTUSS</span>
+                        <hr class="star-light">
+                        <span class="skills">Learning, Enjoyment, Innovation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block main_content %}
+    <!-- About Section -->
+    <section  id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Get to know IET</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    {% include 'snippets/snippet-get_to_know_IET_1.html' %}
+                </div>
+                <div class="col-lg-4">
+                    {% include 'snippets/snippet-get_to_know_IET_2.html' %}
+                </div>
+                <p class="placeholder-md"></p>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="/about" class="btn btn-lg btn-default">
+                        See Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sparklingEvents" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Sparkling Events</h2>
+                    <p class="placeholder-md"></p>
+                </div>
+            </div>
+            <div class="row">
+                {% if events %}
+                    {% for item in events %}
+                         <div class="col-sm-4 sparklingEvents-item">
+                            <a href="/event/{{ item.id }}" class="sparklingEvents-link" data-toggle="modal">
+
+                                <img src="{{ item.mainPoster.url }}" class="img-responsive" alt="">
+                            </a>
+                            <h3>{{ item.title }}</h3>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="/event" class="btn btn-lg btn-default">
+                        See All Events
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Join our big family</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    {% include 'snippets/snippet-join_us_1.html' %}
+                </div>
+                <div class="col-lg-4">
+                    {% include 'snippets/snippet-join_us_2.html' %}
+                </div>
+                <p class="placeholder-sm"></p>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="/join" class="btn btn-lg btn-default">
+                        Go to apply for membership
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

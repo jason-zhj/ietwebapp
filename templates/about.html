@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load staticfiles%}
+{%  block header %}
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img class="img-responsive" src="{% static 'img/intro_to_iet.gif' %}" alt="">
+                    <div class="intro-text">
+                        <span class="name">Introduction of IET and IET-NTUSS</span>
+                        <hr class="star-light">
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    {% include 'snippets/snippet-intro_of_iet_and_ntuss.html' %}
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+{% block main_content %}
+
+    <section id="committeePortfolio" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>The IET-NTUSS Committee</h2>
+                    <p class="placeholder-md"></p>
+                </div>
+            </div>
+            <div class="row">
+                {%  if committeeMembers %}
+                    {% for item in committeeMembers %}
+                        <div class="col-sm-3 sparklingEvents-item">
+                                <img src="{{ item.head_shot.url }}" class="img-responsive" max-width="150" alt="">
+                            <h3>{{ item.name }}</h3>
+                            <p>{{ item.position }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

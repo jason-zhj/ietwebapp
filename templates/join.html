@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load staticfiles%}
+{%  block header %}
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="{% static 'img/why_join_us.gif' %}" alt="">
+                    <div class="intro-text">
+                        <span class="name">Why join us?</span>
+                        <hr class="star-light">
+                        {% include 'snippets/snippet-why_join_us.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block main_content %}
+    <section  id="memberApplication">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Apply for membership</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+{#                   form goes here#}
+                <form method="POST" action="/join">
+                {% if MemberApplicantForm %}
+                    {{ MemberApplicantForm.as_p }}
+                    <input type="submit">
+                {% endif %}
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section  id="shareIdea">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Share your idea</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12 text-center">
+                    {% include 'snippets/snippet-share_your_idea.html' %}
+                </div>
+
+            </div>
+        </div>
+    </section>
+{% endblock %}

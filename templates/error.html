@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{%  block header %}
+<h1>!-!</h1>
+{% endblock %}
+
+{% block main_content %}
+    <section class="col col-lg-12" id="error_section">
+        <h2>Oops</h2>
+        <p>An unknown error has occurred</p>
+        <a href="/{{ nextPage }}" class="btn btn-primary" role="button">Go back</a>
+    </section>
+{% endblock %}

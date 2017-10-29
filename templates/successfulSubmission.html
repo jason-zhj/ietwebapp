@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{%  block header %}
+{% endblock %}
+
+{% block main_content %}
+    <section  id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p class="placeholder-md"></p>
+                    <h2>Your submission is successful!</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-lg-12 text-center">
+                <h3>Click the button to go back to the previous page</h3>
+                <a href="/{{ nextPage }}" class="btn btn-primary" role="button">Go back</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

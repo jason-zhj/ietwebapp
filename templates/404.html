@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{%  block header %}
+<h1>^_^</h1>
+{% endblock %}
+
+{% block main_content %}
+    <section class="col col-lg-12" id="eventSuggestionSubmitted_section">
+        <h1>Thank you!</h1>
+        <h3>Your submission is successful!</h3>
+        <h3>Click the button to go back to the previous page</h3>
+        <a href="/{{ nextPage }}" class="btn btn-primary" role="button">Go back</a>
+    </section>
+
+{% endblock %}
